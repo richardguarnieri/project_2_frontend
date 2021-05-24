@@ -42,8 +42,8 @@ const Two = () => {
     let colorsG=[];
     let values={}
 
-    let svgWidth = 	1140;
-    let svgHeight = 600;
+    /*let svgWidth = 	1140;
+    let svgHeight = 600;*/
     
 
 
@@ -160,6 +160,10 @@ const Two = () => {
             right: 70,
             left: 70
           };
+          //new width and height
+                  let svgWidth = d3.select("#chart").node().getBoundingClientRect().width;   
+                  let svgHeight = d3.select("#chart").node().getBoundingClientRect().width*2/3;
+                  
         
           let height = svgHeight - margin.top - margin.bottom;
           let width = svgWidth - margin.left - margin.right;
@@ -300,6 +304,10 @@ const Two = () => {
             right: 70,
             left: 70
           };
+          //new width and height
+                  let svgWidth = d3.select("#chart").node().getBoundingClientRect().width;   
+                  let svgHeight = d3.select("#chart").node().getBoundingClientRect().width*2/3;
+                  
          
            let height = svgHeight - margin.top - margin.bottom;
            let width = svgWidth - margin.left - margin.right;
@@ -405,7 +413,10 @@ const Two = () => {
         if (!svgArea.empty()) {
           svgArea.remove();
         }
-
+//new width and height
+        let svgWidth = d3.select("#chart").node().getBoundingClientRect().width;   
+        let svgHeight = d3.select("#chart").node().getBoundingClientRect().width*2/3;
+        
         let margin = {
             top: 100,
             bottom: 50,
@@ -522,8 +533,8 @@ const Two = () => {
                 </div>
                 <div className="row pb-5">
                     <div className="col-md-4">
-                        <div className="dropdown">
-                            <button onClick={() => myFunction('mydropdown1')} className="dropbtn" style={{"text-align": "center"}}>Country</button>
+                        <div className="dropdown" style={{"text-align": "center"}}>
+                            <button onClick={() => myFunction('mydropdown1')} className="dropbtn">Country</button>
                             <div id="mydropdown1" className="dropdownz-content" style={{height: "200px", overflow: "auto"}}>
                                 <input type="text" placeholder="Search.." id="myInput1" onKeyUp={() => filterFunction(1)}/>                               
                             </div>
